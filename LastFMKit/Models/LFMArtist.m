@@ -54,8 +54,7 @@
         
         if (name != nil &&
             mbid != nil &&
-            URL != nil &&
-            streamableString != nil)
+            URL != nil)
         {
             // Advanced variables that are only aquired on a `getInfo` call to Artist.
             NSDictionary *images = imageDictionaryFromArray([dictionary objectForKey:@"image"]);

@@ -63,7 +63,7 @@ NS_SWIFT_NAME(Track)
 @property(strong, nonatomic, nullable) LFMWiki *wiki;
 
 /** The album that the track is a part of, if any. */
-@property(weak, nonatomic, nullable) LFMAlbum *album;
+@property(nonatomic, strong, nullable) LFMAlbum *album;
 
 /** The amount of listeners the track has. */
 @property(nonatomic, readonly) NSUInteger listeners;

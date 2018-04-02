@@ -49,6 +49,9 @@
     if (self) {
         // Basic variables every album must have.
         NSString *name = [dictionary objectForKey:@"name"];
+        if (name.length == 0) {
+            name = [dictionary objectForKey:@"title"];
+        }
         NSString *artist = [dictionary objectForKey:@"artist"];
         NSURL *URL = [NSURL URLWithString:[dictionary objectForKey:@"url"]];
         NSString *streamableString = [dictionary objectForKey:@"streamable"];
@@ -57,7 +60,6 @@
         if (name != nil &&
             artist != nil &&
             URL != nil &&
-            streamableString != nil &&
             mbid != nil)
         {
             NSDictionary *images = imageDictionaryFromArray([dictionary objectForKey:@"image"]);

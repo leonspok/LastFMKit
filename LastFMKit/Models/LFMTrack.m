@@ -39,7 +39,7 @@
     NSUInteger _positionInAlbum;
     NSArray <LFMTag *> *_tags;
     LFMWiki *_wiki;
-    LFMAlbum * __weak _album;
+    LFMAlbum *_album;
     NSUInteger _listeners;
     NSUInteger _playCount;
 }
@@ -86,6 +86,7 @@
             _artist = artist;
             _album = album;
             _wiki = wiki;
+            _tags = tags;
             
             return self;
         }

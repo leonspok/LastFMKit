@@ -57,4 +57,14 @@
     [self waitForExpectationsWithTimeout:5.0 handler:nil];
 }
 
+- (void)testTrackInfo {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Get track info"];
+    [LFMTrackProvider getInfoOnTrackNamed:@"Pieces" byArtistNamed:@"Sum 41" withMusicBrainzId:nil autoCorrect:YES forUser:nil callback:^(NSError * _Nullable error, LFMTrack * _Nullable track) {
+        XCTAssertNil(error, @"Failed to create session %@", error);
+        XCTAssertNotNil(track, @"Get track info results were empty");
+        [expectation fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:5.0 handler:nil];
+}
+
 @end
